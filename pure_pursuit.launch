@@ -1,0 +1,15 @@
+<launch>
+
+    <node pkg="pure_pursuit_drone"
+          type="drone_pure_pursuit.py"
+          name="drone_pure_pursuit"
+          output="screen">
+
+        <param name="max_speed"      value="2.0"/>
+        <param name="lookahead_min"  value="1.5"/>
+        <param name="lookahead_max"  value="5.0"/>
+        <param name="goal_tolerance" value="0.5"/>
+
+    </node>
+
+</launch>

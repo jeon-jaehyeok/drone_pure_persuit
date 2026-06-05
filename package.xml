@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pure_pursuit_drone</name>
+  <version>0.1.0</version>
+  <description>Pure Pursuit path tracking for drone using MAVROS</description>
+
+  <maintainer email="user@todo.com">user</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>mavros_msgs</depend>
+  <depend>std_msgs</depend>
+
+</package>

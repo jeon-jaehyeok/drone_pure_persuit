@@ -1,0 +1,5 @@
+# Pure Pursuit Parameters
+max_speed: 2.0        # m/s
+lookahead_min: 1.5    # m
+lookahead_max: 5.0    # m
+goal_tolerance: 0.5   # m
