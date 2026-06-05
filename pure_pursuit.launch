@@ -1,15 +1,22 @@
 <launch>
 
-    <node pkg="pure_pursuit_drone"
-          type="drone_pure_pursuit.py"
-          name="drone_pure_pursuit"
-          output="screen">
+  <!-- CSV 경로 파일 위치 -->
+  <arg name="csv_path"
+       default="$(find pure_pursuit_drone)/mission/path.csv"/>
 
-        <param name="max_speed"      value="2.0"/>
-        <param name="lookahead_min"  value="1.5"/>
-        <param name="lookahead_max"  value="5.0"/>
-        <param name="goal_tolerance" value="0.5"/>
+  <!-- Pure Pursuit 노드 -->
+  <node
+    name="drone_pure_pursuit"
+    pkg="pure_pursuit_drone"
+    type="drone_pure_pursuit.py"
+    output="screen">
 
-    </node>
+    <rosparam file="$(find pure_pursuit_drone)/config/params.yaml"
+              command="load"/>
+
+    <!-- csv_path는 yaml보다 여기서 덮어쓰는 것을 권장 -->
+    <param name="csv_path"  value="$(arg csv_path)"/>
+
+  </node>
 
 </launch>
